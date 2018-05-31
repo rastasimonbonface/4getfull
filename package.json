@@ -1,0 +1,21 @@
+{
+  "name": "4getfull",
+  "version": "1.0.0",
+  "description": "4Chan getter",
+  "main": "index.js",
+  "bin": {
+    "4getfull": "./bin/CLI.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "cli": "^1.0.1",
+    "commander": "^2.11.0",
+    "got": "^7.1.0",
+    "pinklog": "^1.0.0"
+  }
+}
