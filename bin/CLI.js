@@ -10,6 +10,8 @@ comm
 	.version('1.0.0')
     .option('-h, --html', 'generate html')
     .option('-j, --json', 'generate json only')
+    .option('-i, --image', 'download images only')
+    .option('-w, --webm', 'download webms only')
 	.arguments('<bo> <th>')
 	.action(function (bo, th) {
 		board = bo
@@ -18,9 +20,16 @@ comm
             fun.getHtml(board, thread)
             pl.log('html')
         }
-        if(comm.json){
+        else if(comm.json){
 
-        }else{
+        }
+        else if(comm.image || comm.webm){
+            fun.getAllFilesFromThreadWithOptions(board, thread, {
+                    i:comm.image || false,
+                    w:comm.webm || false
+                })
+        }
+        else{
             fun.getAllFilesFromThread(board, thread)
         }
 	}).parse(process.argv);
